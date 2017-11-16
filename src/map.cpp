@@ -12,7 +12,8 @@ struct nodeMap *nodeHead=NULL ,*nodeTail,*newNode;
 
 Map::Map(){
   //nodeHead = nodeTail = NULL;
-
+  
+//Struct that is a node within the linekd list
   struct nodeMap{
     std::string name;
     int id;
@@ -25,14 +26,14 @@ Map::Map(){
   }
 
 }
-
+//Constructor for program assuming with parameters
 Map::Map(std::string pointing,int size){
   paraString = pointing;
   length=size;
   ifstream firstTextFile("firstnames.txt");
   ifstream secondTextFile("lastnames.txt");
 }
-
+//Adds a name to the linked list and returns true when its finished
 bool Map::add(const char *key,int val){
   newNode  = new nodeMap;
   newNode -> name = key;
@@ -54,7 +55,8 @@ bool Map::add(const char *key,int val){
 
 return true;
 }
-
+//Searches through the linked list to find the value that is
+//passed through the parameter
 bool Map::get(const char *key,int &ret){
 currentNode = nodeHead;
 
@@ -68,11 +70,12 @@ while(currentNode != NULL ){
 }
 return false;
 }
-
+//Returns the length of the linked list
 int Map::size(){
   return  length;
 }
-
+//Searches though the linked list in order to remove the node and
+//Shifts the rest to the left.
 bool Map::remove(const char *key){
   currentNode = nodeHead;
   nodeMap *deleteNode;
@@ -88,6 +91,7 @@ bool Map::remove(const char *key){
   }
   return false;
 }
+//Returns how many names are associated with that prefix
 int Map::howMany(const char *prefix){
  int killCounter = -1;
  currentNode=nodeHead;
@@ -103,7 +107,7 @@ int Map::howMany(const char *prefix){
  }
  return killCounter;
 }
-
+//Destrucotr
 Map::~Map(){
   nodeMap* currentNode =nodeHead;
   while(currentNode != NULL){

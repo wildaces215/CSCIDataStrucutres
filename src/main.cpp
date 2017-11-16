@@ -30,15 +30,11 @@ int main(){
  //Test cases for adding function which returns true or false.
 
 
- //Test case for size funtion
+ //Test cases for program
  cout << testing.size()<<" is the testing size" << endl;
-
-
-
  cout << testing.get("Marion Agincourt",val) << "should be true"<<endl;
  cout <<  testing.get("Craig Albertson",valTwo) << " shoudld be false"<<endl;
-
- //cout << testing.remove("Marion Agincourt") <<endl;
+//cout << testing.remove("Marion Agincourt") <<endl;
  //const char *array[]={"Craig","cr","er","wert","crawe"};
  cout << testing.howMany("cr") << " should be 63"<< endl;
  cout << testing.howMany("alb") <<" should be 6" << endl;
